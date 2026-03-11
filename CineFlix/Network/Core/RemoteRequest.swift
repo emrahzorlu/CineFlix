@@ -85,7 +85,7 @@ extension Remote {
     
     func send<T: Decodable>() async throws -> T {
       guard let url = url else {
-        throw Error.invlaidURL
+        throw Error.invalidURL
       }
       
       var urlRequest = URLRequest(url: url)

@@ -27,11 +27,11 @@ struct MovieWorker: MovieWorkerProtocol {
     try await fetcher.fetchTrending()
   }
   
-  func getPopular(page: Int) async throws -> [Movie] {
+  func getPopular(page: Int = 1) async throws -> [Movie] {
     try await fetcher.fetchPopular(page: page)
   }
   
-  func getTopRated(page: Int) async throws -> [Movie] {
+  func getTopRated(page: Int = 1) async throws -> [Movie] {
     try await fetcher.fetchTopRated(page: page)
   }
   
@@ -46,6 +46,4 @@ struct MovieWorker: MovieWorkerProtocol {
   func getSimilar(id: Int) async throws -> [Movie] {
     try await fetcher.fetchSimilar(id: id)
   }
-  
-  
 }

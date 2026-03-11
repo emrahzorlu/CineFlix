@@ -23,11 +23,11 @@ struct MovieFetcher: MovieFetcherProtocol {
     try await methods.trending().results
   }
   
-  func fetchPopular(page: Int) async throws -> [Movie] {
+  func fetchPopular(page: Int = 1) async throws -> [Movie] {
     try await methods.popular(page: page).results
   }
   
-  func fetchTopRated(page: Int) async throws -> [Movie] {
+  func fetchTopRated(page: Int = 1) async throws -> [Movie] {
     try await methods.topRated(page: page).results
   }
   

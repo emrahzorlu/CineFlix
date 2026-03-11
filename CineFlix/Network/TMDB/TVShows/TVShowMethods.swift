@@ -22,7 +22,7 @@ struct TVShowMethods {
   }
   
   // MARK: Popular
-  func popular(page: Int) async throws -> TVShowListResponse {
+  func popular(page: Int = 1) async throws -> TVShowListResponse {
     try await Remote.Request(copying: request)
       .set(path: "/tv/popular")
       .set(queryItems: [URLQueryItem(name: "page", value: "\(page)")])
@@ -30,7 +30,7 @@ struct TVShowMethods {
   }
   
   // MARK: Top Rated
-  func topRated(page: Int) async throws -> TVShowListResponse {
+  func topRated(page: Int = 1) async throws -> TVShowListResponse {
     try await Remote.Request(copying: request)
       .set(path: "/tv/top_rated")
       .set(queryItems: [URLQueryItem(name: "page", value: "\(page)")])

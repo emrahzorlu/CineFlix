@@ -11,16 +11,16 @@ struct Remote {}
 
 extension Remote {
   enum Error: LocalizedError {
-    case invlaidURL
+    case invalidURL
     case nilResponse
     case invalidStatusCode(Int)
     case noContent
     case decode(Swift.Error)
-    case unkown
+    case unknown
     
     public var errorDescription: String? {
       switch self {
-      case .invlaidURL:
+      case .invalidURL:
         return "The URL provided was invalid."
       case .nilResponse:
         return "No response was received from the server."
@@ -30,7 +30,7 @@ extension Remote {
         return "No content was returned from the server."
       case .decode(let error):
         return "Failed to decode response: \(error.localizedDescription)"
-      case .unkown:
+      case .unknown:
         return "An unknown error occurred."
       }
     }

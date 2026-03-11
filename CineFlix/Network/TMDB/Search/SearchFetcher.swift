@@ -14,7 +14,7 @@ protocol SearchFetcherProtocol {
 struct SearchFetcher: SearchFetcherProtocol {
   private let methods = SearchMethods()
   
-  func search(query: String, page: Int) async throws -> SearchResponse {
+  func search(query: String, page: Int = 1) async throws -> SearchResponse {
     try await methods.search(query: query, page: page)
   }
 }

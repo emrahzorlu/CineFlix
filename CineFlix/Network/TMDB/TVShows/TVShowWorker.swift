@@ -27,11 +27,11 @@ struct TVShowWorker: TVShowWorkerProtocol {
     try await fetcher.fetchTrending()
   }
   
-  func getPopular(page: Int) async throws -> [TVShow] {
+  func getPopular(page: Int = 1) async throws -> [TVShow] {
     try await fetcher.fetchPopular(page: page)
   }
   
-  func getTopRated(page: Int) async throws -> [TVShow] {
+  func getTopRated(page: Int = 1) async throws -> [TVShow] {
     try await fetcher.fetchTopRated(page: page)
   }
   
