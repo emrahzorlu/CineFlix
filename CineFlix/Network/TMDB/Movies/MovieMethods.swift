@@ -57,4 +57,12 @@ struct MovieMethods {
       .set(path: "/movie/\(id)/similar")
       .send()
   }
+  
+  // MARK: Upcoming
+  func upcoming(page: Int = 1) async throws -> MovieListResponse {
+    try await Remote.Request(copying: request)
+      .set(path: "/movie/upcoming")
+      .set(queryItems: [URLQueryItem(name: "page", value: "\(page)")])
+      .send()
+  }
 }

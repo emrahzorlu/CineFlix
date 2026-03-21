@@ -14,6 +14,7 @@ protocol MovieFetcherProtocol {
   func fetchDetail(id: Int) async throws -> MovieDetail
   func fetchCredits(id: Int) async throws -> MovieCredits
   func fetchSimilar(id: Int) async throws -> [Movie]
+  func fetchUpcoming(page: Int) async throws -> [Movie]
 }
 
 struct MovieFetcher: MovieFetcherProtocol {
@@ -41,5 +42,9 @@ struct MovieFetcher: MovieFetcherProtocol {
   
   func fetchSimilar(id: Int) async throws -> [Movie] {
     try await methods.similar(id: id).results
+  }
+  
+  func fetchUpcoming(page: Int = 1) async throws -> [Movie] {
+    try await methods.upcoming(page: page).results
   }
 }

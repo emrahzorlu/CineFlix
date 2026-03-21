@@ -98,7 +98,7 @@ extension Remote {
       }
       
 #if DEBUG
-      print("🌐 \(method.rawValue) \(url)")
+      print(" \(method.rawValue) \(url)")
 #endif
       
       let (data, response) = try await session.data(for: urlRequest)
